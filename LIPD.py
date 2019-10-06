@@ -92,7 +92,6 @@ def main_window():
 			dest_path_string = dest_path.get() + "/"
 			os.chdir(dl_path_string)
 			before_click = after_click = len(os.listdir(dl_path_string))
-			
 			driver.get(url_entry.get())
 			more = driver.find_element_by_class_name("ml2.pv-s-profile-actions__overflow-toggle.artdeco-button.artdeco-button--muted.artdeco-button--2.artdeco-button--secondary.ember-view")
 			more.click()
@@ -101,10 +100,10 @@ def main_window():
 			save_to_pdf.click()
 			profile_name = driver.find_element_by_class_name("inline.t-24.t-black.t-normal.break-words").text
 			person_name = str(profile_name + ".pdf")
-			
-			if '"' in person_name:
-				person_name = person_name.replace('"', "'")
-
+			extra_characters = 	'\\/:*?"<>|'
+			for c in extra_characters:
+				if c in person_name:
+					person_name = person_name.replace(c, ".")
 			while before_click == after_click:
 				time.sleep(1)
 				after_click = len(os.listdir(dl_path_string))
