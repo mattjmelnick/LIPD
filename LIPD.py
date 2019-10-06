@@ -100,7 +100,7 @@ def main_window():
 			save_to_pdf.click()
 			profile_name = driver.find_element_by_class_name("inline.t-24.t-black.t-normal.break-words").text
 			person_name = str(profile_name + ".pdf")
-			extra_characters = 	'\\/:*?"<>|'
+			extra_characters = '\/:*?"<>|'
 			for c in extra_characters:
 				if c in person_name:
 					person_name = person_name.replace(c, ".")
