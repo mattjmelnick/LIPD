@@ -172,5 +172,3 @@ sign_in = Button(signin, text = "Sign In", command = login)
 sign_in.place(x = 50, y = 80)
 
 root.mainloop()
-
-#testing
