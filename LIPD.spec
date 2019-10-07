@@ -5,7 +5,7 @@ block_cipher = None
 
 a = Analysis(['LIPD.py'],
              pathex=['C:\\Users\\Matt\\Documents\\python_projects\\linkedin_profile_downloader'],
-             binaries=[],
+             binaries=[('C:\\\\Python\\\\Scripts\\\\chromedriver.exe', '.')],
              datas=[],
              hiddenimports=[],
              hookspath=[],
